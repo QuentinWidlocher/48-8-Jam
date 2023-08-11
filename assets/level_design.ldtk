@@ -403,7 +403,7 @@
 					"entityInstances": [
 						{
 							"__identifier": "Player",
-							"__grid": [5,7],
+							"__grid": [6,7],
 							"__pivot": [0.5,1],
 							"__tags": [],
 							"__tile": { "tilesetUid": 25, "x": 0, "y": 0, "w": 500, "h": 500 },
@@ -412,7 +412,7 @@
 							"width": 250,
 							"height": 250,
 							"defUid": 27,
-							"px": [688,1000],
+							"px": [813,1000],
 							"fieldInstances": []
 						}
 					]
