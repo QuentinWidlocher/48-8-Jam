@@ -1,6 +1,6 @@
 class_name IdleState extends State
 
-const DECELERATION = 500.0
+var DECELERATION = RunningState.ACCELERATION
 
 func _on_enter() -> void:
   print("Entering IdleState")
