@@ -1,7 +1,7 @@
 class_name RunningState extends State
 
-const ACCELERATION = 1000.0
-const MAX_SPEED = 300.0
+const ACCELERATION = 5000.0
+const MAX_SPEED = 500.0
 
 func _on_enter() -> void:
   print("Entering RunningState")
