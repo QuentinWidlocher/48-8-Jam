@@ -187,7 +187,8 @@ static func create_entity_layer(source_file: String, world_data: Dictionary, lay
 		layer,
 		options.entity_post_import_script,
 		source_file,
-		"Layer"
+		"Layer",
+    layer_data
 	)
 
 	return layer

@@ -37,11 +37,10 @@ static func post_import(tileset: TileSet) -> TileSet:
           # var tile_id := Tile.tile_grid_coords_to_tile_id(grid_coords, grid_size.x)
           var tile_data :TileData = tileset_source.get_tile_data(grid_coords, alternative_tile)
           var tile_custom_data = tile_data.get_custom_data(CUSTOM_DATA_LAYER_NAME)
-          print("custom_data", str(tile_custom_data.get("enums")))
 
           if tile_custom_data != null and tile_custom_data != {}:
             var enums :Array = tile_custom_data.get("enums")
-            print(enums)
+
             if enums.has("HasCollisions"):
               tile_data.add_collision_polygon(physics_layer_id)
               tile_data.set_collision_polygon_points(

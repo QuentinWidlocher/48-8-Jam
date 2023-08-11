@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://df2qm14vkwsne"]
+[gd_scene load_steps=2 format=3 uid="uid://df2qm14vkwsne"]
 
-[ext_resource type="PackedScene" uid="uid://bmcqxes77bv17" path="res://scenes/player/player.tscn" id="1_8kfhd"]
 [ext_resource type="PackedScene" uid="uid://b6ssljg2n0oh3" path="res://assets/level_design.ldtk" id="1_688hu"]
 
 [node name="Sandbox" type="Node2D"]
@@ -9,13 +8,5 @@
 
 [node name="Level_0-tilemap-125x125" parent="level_design/Level_0" index="0"]
 collision_visibility_mode = 1
-
-[node name="Player" parent="." instance=ExtResource("1_8kfhd")]
-position = Vector2(466, 472)
-collision_mask = 2
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-position_smoothing_enabled = true
 
 [editable path="level_design"]
