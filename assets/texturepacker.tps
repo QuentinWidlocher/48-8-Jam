@@ -145,7 +145,7 @@
         <key>globalSpriteSettings</key>
         <struct type="SpriteSettings">
             <key>scale</key>
-            <double>1</double>
+            <double>0.25</double>
             <key>scaleMode</key>
             <enum type="ScaleMode">Smooth</enum>
             <key>extrude</key>
@@ -171,15 +171,19 @@
             <key type="filename">tiles/BG/BG_02.png</key>
             <key type="filename">tiles/BG/BG_03.png</key>
             <key type="filename">tiles/MURS/Mur_bas_01.png</key>
+            <key type="filename">tiles/MURS/Mur_bas_02.png</key>
             <key type="filename">tiles/MURS/Mur_haut_01.png</key>
             <key type="filename">tiles/SOL/Sol_milieu_01.png</key>
             <key type="filename">tiles/SOL/Sol_milieu_02.png</key>
             <key type="filename">tiles/SOL/Sol_milieu_03.png</key>
+            <key type="filename">tiles/WALL_TOP_EDGES/WTedge_angleGrand.png</key>
+            <key type="filename">tiles/WALL_TOP_EDGES/WTedge_bas.png</key>
+            <key type="filename">tiles/WALL_TOP_EDGES/WTedge_cote.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>spriteScale</key>
-                <double>0.25</double>
+                <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
