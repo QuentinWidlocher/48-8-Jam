@@ -6,7 +6,7 @@ const physics_layer_id := 0
 # Value of the enum in LDtk
 const walls_int_value := 1
 
-static func post_import(tileset: TileSet) -> TileSet:
+static func post_import(tileset: TileSet, _layer_data: Dictionary) -> TileSet:
   var source_count := tileset.get_source_count()
   for index in range(0, source_count):
 

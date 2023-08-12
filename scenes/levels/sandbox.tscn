@@ -5,8 +5,3 @@
 [node name="Sandbox" type="Node2D"]
 
 [node name="level_design" parent="." instance=ExtResource("1_688hu")]
-
-[node name="Level_0-tilemap-125x125" parent="level_design/Level_0" index="0"]
-collision_visibility_mode = 1
-
-[editable path="level_design"]
