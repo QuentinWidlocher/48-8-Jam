@@ -10,7 +10,7 @@ static func post_import(level: Node2D, _ldtk_data: Dictionary) -> Node2D:
       if layer_name.ends_with("int-values"):
         tilemap.set_layer_enabled(i, false)
 
-      if layer_name == "Darkness":
+      if layer_name == "Darkness" or layer_name == "Wall_Top_No_Need_To_Mirror" or layer_name == "Wall_Top_Edges":
         tilemap.set_layer_z_index(i, 1)
 
   return level

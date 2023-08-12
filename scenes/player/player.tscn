@@ -92,7 +92,7 @@ shape = SubResource("CircleShape2D_og7xm")
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-12, 100)
 color = Color(0, 1, 1, 1)
-energy = 1.5
+energy = 0.5
 shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 5.2

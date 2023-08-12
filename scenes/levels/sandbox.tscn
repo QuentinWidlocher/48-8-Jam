@@ -1,7 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://df2qm14vkwsne"]
 
-[ext_resource type="PackedScene" uid="uid://b682xqu2l4nlo" path="res://assets/level_design.ldtk" id="1_688hu"]
+[ext_resource type="PackedScene" uid="uid://b682xqu2l4nlo" path="res://assets/level_design.ldtk" id="1_x2o5p"]
 
 [node name="Sandbox" type="Node2D"]
 
-[node name="level_design" parent="." instance=ExtResource("1_688hu")]
+[node name="level_design" parent="." instance=ExtResource("1_x2o5p")]
+position = Vector2(11, -264)

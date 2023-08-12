@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var item_bar: HBoxContainer = $ItemBar
+@onready var item_bar: HBoxContainer = %ItemBar
 
 @onready var inventory_manager: InventoryManager = get_node("/root/MyInventoryManager")
 
