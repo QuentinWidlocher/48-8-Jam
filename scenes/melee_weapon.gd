@@ -1,18 +1,18 @@
 class_name MeleeWeapon
 extends Weapon
 
-var damage: float
-var durability: float
-var duration: float
+@export var damage: float
+@export var durability: float
+@export var duration: float
 
 var current_timer: float = 0.0
 
-func _init(the_damage: float, the_durability: float, the_duration: float):
-  damage = the_damage
-  durability = the_durability
-  duration = the_duration
+func _on_enter():
+  animation_player.speed_scale = 1.0 / duration
+  animation_player.play("melee_attack")
 
 func _on_exit() -> bool:
+  animation_player.play("RESET")
   current_timer = 0.0
   durability -= 1
 

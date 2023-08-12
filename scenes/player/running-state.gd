@@ -18,6 +18,8 @@ func _update(delta: float) -> State:
   if direction.length() <= 0:
     return IdleState.new(player)
 
+  player.looking_angle = direction.angle()
+
   player.velocity.x = move_toward(player.velocity.x, direction.x * MAX_SPEED, ACCELERATION * delta)
   player.velocity.y = move_toward(player.velocity.y, direction.y * MAX_SPEED, ACCELERATION * delta)
 

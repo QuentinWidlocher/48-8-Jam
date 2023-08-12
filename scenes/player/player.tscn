@@ -24,3 +24,8 @@ offset_left = 80.0
 offset_top = -66.0
 offset_right = 327.0
 offset_bottom = 127.0
+
+[node name="WeaponAnchor" type="Node2D" parent="."]
+
+[node name="WeaponLocation" type="Node2D" parent="WeaponAnchor"]
+position = Vector2(115, 0)

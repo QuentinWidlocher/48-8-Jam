@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfwsc5a5tat6"]
+
+[ext_resource type="Script" path="res://scenes/melee_weapon.gd" id="1_hrti8"]
+[ext_resource type="PackedScene" uid="uid://ycbahqugggow" path="res://scenes/weapon.tscn" id="1_w71b7"]
+
+[node name="Laddle" instance=ExtResource("1_w71b7")]
+script = ExtResource("1_hrti8")
+damage = 1.0
+durability = 10.0
+duration = 0.2
+
+[node name="Sprite" parent="." index="0"]
+modulate = Color(1, 0.211765, 0.211765, 1)
+scale = Vector2(0.5, 0.5)
