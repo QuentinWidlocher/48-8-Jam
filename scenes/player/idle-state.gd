@@ -21,6 +21,9 @@ func _update(delta: float) -> State:
   player.velocity.y = move_toward(player.velocity.y, 0.0, DECELERATION * delta)
 
   if (Input.is_action_just_pressed("attack")):
-    return AttackingState.new(player)
+    if player.near_dispenser != null:
+      player.near_dispenser.refill()
+    else:
+      return AttackingState.new(player)
 
   return self

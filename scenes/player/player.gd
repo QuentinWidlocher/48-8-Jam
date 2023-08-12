@@ -1,32 +1,40 @@
 class_name Player
 extends CharacterBody2D
 
+@onready var inventory_manager: InventoryManager = get_node("/root/MyInventoryManager")
+
 @onready var debug_label: Label = $Label
 @onready var weapon_location: Node2D = $WeaponAnchor/WeaponLocation
 @onready var weapon_anchor: Node2D = $WeaponAnchor
+@onready var dispenser_area_2d: Area2D = $DispenserArea2D
 
 var state: State
-var weapons: Array = [
-  load("res://scenes/weapons/laddle.tscn").instantiate()
-]
-var current_weapon := 0
 var looking_angle := 0.0
+var near_dispenser: Dispenser
 
 func _ready():
-  print("player ready")
   state = IdleState.new(self)
   state.on_enter()
-
-  weapon_location.add_child(get_current_weapon())
-  #get_current_weapon().position = weapon_location.position
 
 func _physics_process(delta):
   if not state:
     return
+
+  near_dispenser = null
+  for area in dispenser_area_2d.get_overlapping_areas():
+    var dispenser = area.get_parent()
+    if dispenser is Dispenser:
+      near_dispenser = dispenser
   
   weapon_anchor.rotation = Vector2.RIGHT.rotated(looking_angle).angle()
-  if get_current_weapon() != null:
-    get_current_weapon().rotation = -weapon_anchor.rotation
+  if inventory_manager.current_weapon != null:
+    inventory_manager.current_weapon.rotation = -weapon_anchor.rotation
+
+    if inventory_manager.current_weapon != weapon_location.get_child(0):
+      switch_weapon(weapon_location.get_child(0), inventory_manager.current_weapon)
+  else:
+      if weapon_location.get_child(0) != null:
+        weapon_location.get_child(0).queue_free()
 
   var new_state = state.update(delta)
 
@@ -43,9 +51,12 @@ func _physics_process(delta):
 func handle_common_collision():
   pass
 
-func get_current_weapon():
-  return weapons[current_weapon]
+func switch_weapon(previous_weapon: Weapon, new_weapon: Weapon):
+  weapon_location.remove_child(previous_weapon)
+  weapon_location.add_child(new_weapon)
 
 func break_current_weapon():
-  weapon_location.remove_child(get_current_weapon())
-  weapons[current_weapon] = null
+  inventory_manager.current_weapon = null
+
+func get_current_weapon():
+  return inventory_manager.current_weapon

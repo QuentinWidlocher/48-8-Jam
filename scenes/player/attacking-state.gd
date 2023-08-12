@@ -7,10 +7,8 @@ func _on_enter() -> void:
   name = "AttackingState"
 
   weapon = player.get_current_weapon() 
-  print("weapon: ", weapon)
 
   if weapon != null:
-
     weapon.on_enter()
 
 func _on_exit() -> void:

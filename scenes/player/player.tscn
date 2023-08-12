@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmcqxes77bv17"]
+[gd_scene load_steps=5 format=3 uid="uid://bmcqxes77bv17"]
 
 [ext_resource type="Texture2D" uid="uid://dyvrttto4gbbo" path="res://icon.svg" id="1_pbnme"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_tucv0"]
@@ -6,6 +6,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uw6wb"]
 radius = 60.0
 height = 120.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_og7xm"]
+radius = 123.146
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 2
@@ -29,3 +32,8 @@ offset_bottom = 127.0
 
 [node name="WeaponLocation" type="Node2D" parent="WeaponAnchor"]
 position = Vector2(115, 0)
+
+[node name="DispenserArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DispenserArea2D"]
+shape = SubResource("CircleShape2D_og7xm")
