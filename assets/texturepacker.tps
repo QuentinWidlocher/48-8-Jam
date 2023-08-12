@@ -178,11 +178,15 @@
             <key type="filename">tiles/SOL/Sol_milieu_03.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/BGmid.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/WTedge_angleBord.png</key>
+            <key type="filename">tiles/WALL_TOP_EDGES/WTedge_angleBord_D.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/WTedge_angleGrand.png</key>
+            <key type="filename">tiles/WALL_TOP_EDGES/WTedge_angleGrand_D.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/WTedge_anglePetit.png</key>
+            <key type="filename">tiles/WALL_TOP_EDGES/WTedge_anglePetit_D.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/WTedge_bas.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/WTedge_cote.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/WTedge_coteCTR.png</key>
+            <key type="filename">tiles/WALL_TOP_EDGES/WTedge_cote_D.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/WTedge_midCTR.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
