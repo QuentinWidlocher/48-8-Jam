@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bip1t125ls5tt"]
+[gd_scene load_steps=3 format=3 uid="uid://bip1t125ls5tt"]
 
 [ext_resource type="Script" path="res://scenes/dispenser.gd" id="1_uyxld"]
-[ext_resource type="Texture2D" uid="uid://dyvrttto4gbbo" path="res://icon.svg" id="2_y6imw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o528v"]
 size = Vector2(635, 313)
@@ -10,7 +9,6 @@ size = Vector2(635, 313)
 script = ExtResource("1_uyxld")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_y6imw")
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -1,11 +1,56 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmcqxes77bv17"]
+[gd_scene load_steps=12 format=3 uid="uid://bmcqxes77bv17"]
 
-[ext_resource type="Texture2D" uid="uid://dyvrttto4gbbo" path="res://icon.svg" id="1_pbnme"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_tucv0"]
+[ext_resource type="Texture2D" uid="uid://ctoykkaml016s" path="res://assets/perso/Witch_00.png" id="3_x7bk0"]
+[ext_resource type="Texture2D" uid="uid://b51fk66qpviqj" path="res://assets/perso/Witch_mv_fwd_punch01.png" id="4_n7bp7"]
+[ext_resource type="Texture2D" uid="uid://ck4eopl80krgs" path="res://assets/perso/Witch_mv_fwd_punch02.png" id="5_08wxt"]
+[ext_resource type="Texture2D" uid="uid://by7q6kvllsrfi" path="res://assets/perso/Witch_mv_fwd_punch03.png" id="6_ccc6a"]
+[ext_resource type="Texture2D" uid="uid://30ix5tbkrups" path="res://assets/perso/Witch_mv_fwd_punch04.png" id="7_8j5eg"]
+[ext_resource type="Texture2D" uid="uid://b70r3j4iv7f31" path="res://assets/perso/Witch_mv_fwd_punch05.png" id="8_4ecvj"]
+[ext_resource type="Texture2D" uid="uid://bojjx12kykpjb" path="res://assets/perso/Witch_mv_fwd01.png" id="9_gnfl7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rawg6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x7bk0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_n7bp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_08wxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ccc6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8j5eg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4ecvj")
+}],
+"loop": false,
+"name": &"melee_attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_gnfl7")
+}],
+"loop": true,
+"name": &"running",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uw6wb"]
-radius = 60.0
-height = 120.0
+radius = 28.0
+height = 112.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og7xm"]
 radius = 123.146
@@ -16,10 +61,13 @@ motion_mode = 1
 floor_stop_on_slope = false
 script = ExtResource("1_tucv0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_pbnme")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_rawg6")
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 59)
 shape = SubResource("CapsuleShape2D_uw6wb")
 
 [node name="Label" type="Label" parent="."]
@@ -36,4 +84,5 @@ position = Vector2(115, 0)
 [node name="DispenserArea2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DispenserArea2D"]
+position = Vector2(12, 0)
 shape = SubResource("CircleShape2D_og7xm")

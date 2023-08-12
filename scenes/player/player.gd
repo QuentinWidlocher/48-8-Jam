@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var weapon_location: Node2D = $WeaponAnchor/WeaponLocation
 @onready var weapon_anchor: Node2D = $WeaponAnchor
 @onready var dispenser_area_2d: Area2D = $DispenserArea2D
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var state: State
 var looking_angle := 0.0

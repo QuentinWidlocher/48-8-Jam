@@ -5,6 +5,7 @@ const MAX_SPEED = 500.0
 
 func _on_enter() -> void:
   name = "RunningState"
+  player.animated_sprite.play("running")
 
 func _on_exit() -> void:
   pass
@@ -20,6 +21,11 @@ func _update(delta: float) -> State:
 
   player.looking_angle = direction.angle()
 
+  if direction.x < 0:
+    player.animated_sprite.flip_h = true
+  else:
+    player.animated_sprite.flip_h = false
+
   player.velocity.x = move_toward(player.velocity.x, direction.x * MAX_SPEED, ACCELERATION * delta)
   player.velocity.y = move_toward(player.velocity.y, direction.y * MAX_SPEED, ACCELERATION * delta)
 
@@ -27,6 +33,9 @@ func _update(delta: float) -> State:
     return DodgingState.new(player)
 
   if (Input.is_action_just_pressed("attack")):
-    return AttackingState.new(player)
+    if player.near_dispenser != null:
+      player.near_dispenser.refill()
+    else:
+      return AttackingState.new(player)
 
   return self

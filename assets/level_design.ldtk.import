@@ -2,13 +2,15 @@
 
 importer="LDtk_world.import"
 type="PackedScene"
-uid="uid://b6ssljg2n0oh3"
+uid="uid://b682xqu2l4nlo"
 path="res://.godot/imported/level_design.ldtk-01a1851fcd9f8823e8eee603ca148be6.scn"
 
 [deps]
 
+files=["res://assets/level_design/tilesets/level_design-tileset-125x125.res", "res://assets/level_design/tilesets/level_design-tileset-16x16.res", "res://assets/level_design/tilesets/level_design-tileset-500x500.res", "res://.godot/imported/level_design.ldtk-01a1851fcd9f8823e8eee603ca148be6-Level_0-.scn"]
+
 source_file="res://assets/level_design.ldtk"
-dest_files=["res://.godot/imported/level_design.ldtk-01a1851fcd9f8823e8eee603ca148be6.scn"]
+dest_files=["res://.godot/imported/level_design.ldtk-01a1851fcd9f8823e8eee603ca148be6.scn", "res://assets/level_design/tilesets/level_design-tileset-125x125.res", "res://assets/level_design/tilesets/level_design-tileset-16x16.res", "res://assets/level_design/tilesets/level_design-tileset-500x500.res", "res://.godot/imported/level_design.ldtk-01a1851fcd9f8823e8eee603ca148be6-Level_0-.scn"]
 
 [params]
 
@@ -22,8 +24,8 @@ Levels=""
 level_add_metadata=true
 import_all_levels=true
 levels_to_import="0,1"
-pack_levels=false
-level_post_import_script=""
+pack_levels=true
+level_post_import_script="res://src/toggle_layer_visibility_zindex.gd"
 Entities=""
 import_entities=true
 entity_add_metadata=true

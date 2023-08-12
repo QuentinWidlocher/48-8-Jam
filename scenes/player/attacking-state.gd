@@ -5,6 +5,7 @@ var DECELERATION = RunningState.ACCELERATION / 5.0
 
 func _on_enter() -> void:
   name = "AttackingState"
+  player.animated_sprite.play("melee_attack")
 
   weapon = player.get_current_weapon() 
 

@@ -15,6 +15,17 @@ const CONTENT: Dictionary = {
   ]
 }
 
+const SPRITE: Dictionary = {
+  DispenserType.KITCHEN: preload("res://icon.svg"),
+}
+
+@onready var sprite: Sprite2D = $Sprite2D
+
+func _ready():
+  sprite.texture = SPRITE[type]
+
 func refill():
   var random_weapon = CONTENT[type][randi() % CONTENT[type].size()]
   inventory_manager.add_weapon(random_weapon)
+
+

@@ -4,6 +4,7 @@ var DECELERATION = RunningState.ACCELERATION
 
 func _on_enter() -> void:
   name = "IdleState"
+  player.animated_sprite.play("idle")
 
 func _on_exit() -> void:
   pass
