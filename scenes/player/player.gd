@@ -17,6 +17,9 @@ func _ready():
   state = IdleState.new(self)
   state.on_enter()
 
+  inventory_manager.current_weapon_updated.connect(current_weapon_updated)
+  inventory_manager.inventory_updated.connect(weapons_updated)
+
 func _physics_process(delta):
   if not state:
     return
@@ -28,14 +31,6 @@ func _physics_process(delta):
       near_dispenser = dispenser
   
   weapon_anchor.rotation = Vector2.RIGHT.rotated(looking_angle).angle()
-  if inventory_manager.current_weapon != null:
-    inventory_manager.current_weapon.rotation = -weapon_anchor.rotation
-
-    if inventory_manager.current_weapon != weapon_location.get_child(0):
-      switch_weapon(weapon_location.get_child(0), inventory_manager.current_weapon)
-  else:
-      if weapon_location.get_child(0) != null:
-        weapon_location.get_child(0).queue_free()
 
   var new_state = state.update(delta)
 
@@ -61,3 +56,31 @@ func break_current_weapon():
 
 func get_current_weapon():
   return inventory_manager.current_weapon
+
+func weapons_updated(weapons: Array):
+  for i in range( weapons.size() ):
+    var weapon = weapons[i]
+    var child = weapon_location.get_child(i)
+
+    if weapon != null:
+      if child == null:
+        weapon_location.add_child(weapon)
+    else:
+      if child != null:
+        weapon_location.remove_child(child)
+    
+
+func current_weapon_updated(weapon: Weapon):
+  var current_weapon_in_hand = weapon_location.get_child(0) if weapon_location.get_child_count() > 0 else null
+
+  for i in range(weapon_location.get_child_count()):
+    var weapon_in_hand = weapon_location.get_child(i)
+
+    print("comparing " + weapon_in_hand.name + " with " + (str(weapon.name) if weapon != null else "null"))
+
+    if weapon != null and weapon == weapon_in_hand:
+      weapon_in_hand.set_process(true)
+      weapon_in_hand.sprite.visible = true
+    else:
+      weapon_in_hand.set_process(false)
+      weapon_in_hand.sprite.visible = false

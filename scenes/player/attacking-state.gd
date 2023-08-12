@@ -7,7 +7,7 @@ func _on_enter() -> void:
   name = "AttackingState"
   player.animated_sprite.play("melee_attack")
 
-  weapon = player.get_current_weapon() 
+  weapon = player.get_current_weapon()
 
   if weapon != null:
     weapon.on_enter()
