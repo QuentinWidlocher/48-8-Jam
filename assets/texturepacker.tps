@@ -179,8 +179,10 @@
             <key type="filename">tiles/WALL_TOP_EDGES/BGmid.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/WTedge_angleBord.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/WTedge_angleGrand.png</key>
+            <key type="filename">tiles/WALL_TOP_EDGES/WTedge_anglePetit.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/WTedge_bas.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/WTedge_cote.png</key>
+            <key type="filename">tiles/WALL_TOP_EDGES/WTedge_coteCTR.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/WTedge_midCTR.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
