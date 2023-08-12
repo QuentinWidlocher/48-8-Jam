@@ -177,6 +177,7 @@
             <key type="filename">tiles/SOL/Sol_milieu_02.png</key>
             <key type="filename">tiles/SOL/Sol_milieu_03.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/BGmid.png</key>
+            <key type="filename">tiles/WALL_TOP_EDGES/WTedge_angleBord.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/WTedge_angleGrand.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/WTedge_bas.png</key>
             <key type="filename">tiles/WALL_TOP_EDGES/WTedge_cote.png</key>
