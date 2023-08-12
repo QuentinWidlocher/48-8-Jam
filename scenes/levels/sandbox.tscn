@@ -1,11 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://df2qm14vkwsne"]
+[gd_scene load_steps=2 format=3 uid="uid://df2qm14vkwsne"]
 
-[ext_resource type="PackedScene" uid="uid://b6ssljg2n0oh3" path="res://assets/level_design.ldtk" id="1_688hu"]
-[ext_resource type="PackedScene" uid="uid://bip1t125ls5tt" path="res://scenes/dispenser.tscn" id="2_6dv3i"]
+[ext_resource type="PackedScene" uid="uid://b682xqu2l4nlo" path="res://assets/level_design.ldtk" id="1_688hu"]
 
 [node name="Sandbox" type="Node2D"]
 
 [node name="level_design" parent="." instance=ExtResource("1_688hu")]
-
-[node name="Dispenser" parent="." instance=ExtResource("2_6dv3i")]
-position = Vector2(744, 436)

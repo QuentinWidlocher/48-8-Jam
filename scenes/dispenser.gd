@@ -28,4 +28,8 @@ func refill():
   var random_weapon = CONTENT[type][randi() % CONTENT[type].size()]
   inventory_manager.add_weapon(random_weapon)
 
+static func parse_enum(value: String) -> DispenserType:
+  match value:
+    "Kitchen": return DispenserType.KITCHEN
+    _: return DispenserType.KITCHEN
 

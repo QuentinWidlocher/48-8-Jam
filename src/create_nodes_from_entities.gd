@@ -1,5 +1,6 @@
 static func post_import(entity_layer: Node2D, layer_data: Dictionary) -> Node2D:
   var player := preload("res://scenes/player/player.tscn")
+  var dispenser := preload("res://scenes/dispenser.tscn")
 
   var level_width := int(layer_data["__cWid"])
   var level_height := int(layer_data["__cHei"])
@@ -31,6 +32,14 @@ static func post_import(entity_layer: Node2D, layer_data: Dictionary) -> Node2D:
         camera.limit_bottom = level_height * tile_width
 
         node.add_child(camera)
+
+      "Dispenser":
+        var disp: Dispenser = dispenser.instantiate()  
+        disp.type = Dispenser.parse_enum(entity_data.fields["DispenserType"])
+
+        print(disp)
+        node = disp
+
       _:
         node = Node2D.new()
 
