@@ -69,15 +69,15 @@ Arme
 ### Prio
 
 - [ ] Sorcière
-  - [ ] Idle
+  - [>] Idle
   - [ ] Marche
   - [ ] Roulade
   - [ ] Attaquer
   - [ ] Lancer
   - [ ] Poser
-- [ ] Enviro
-  - [ ] Mur
-  - [ ] Sol
+- [x] Enviro
+  - [x] Mur
+  - [x] Sol
 - [ ] Dispensers
   - [ ] Cuisine
     - [ ] Poêle

@@ -403,7 +403,11 @@
 					"entityInstances": [
 						{
 							"__identifier": "Player",
+<<<<<<< Updated upstream
 							"__grid": [6,7],
+=======
+							"__grid": [10,9],
+>>>>>>> Stashed changes
 							"__pivot": [0.5,1],
 							"__tags": [],
 							"__tile": { "tilesetUid": 25, "x": 0, "y": 0, "w": 500, "h": 500 },
@@ -412,7 +416,11 @@
 							"width": 250,
 							"height": 250,
 							"defUid": 27,
+<<<<<<< Updated upstream
 							"px": [813,1000],
+=======
+							"px": [1313,1250],
+>>>>>>> Stashed changes
 							"fieldInstances": []
 						}
 					]
