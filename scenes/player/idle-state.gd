@@ -3,7 +3,6 @@ class_name IdleState extends State
 var DECELERATION = RunningState.ACCELERATION
 
 func _on_enter() -> void:
-  print("Entering IdleState")
   name = "IdleState"
 
 func _on_exit() -> void:
@@ -20,5 +19,8 @@ func _update(delta: float) -> State:
 
   player.velocity.x = move_toward(player.velocity.x, 0.0, DECELERATION * delta)
   player.velocity.y = move_toward(player.velocity.y, 0.0, DECELERATION * delta)
+
+  if (Input.is_action_just_pressed("attack")):
+    return AttackingState.new(player)
 
   return self

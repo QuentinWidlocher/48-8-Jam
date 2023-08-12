@@ -4,7 +4,6 @@ const ACCELERATION = 5000.0
 const MAX_SPEED = 500.0
 
 func _on_enter() -> void:
-  print("Entering RunningState")
   name = "RunningState"
 
 func _on_exit() -> void:
@@ -19,12 +18,13 @@ func _update(delta: float) -> State:
   if direction.length() <= 0:
     return IdleState.new(player)
 
-  print(player.velocity)
-
   player.velocity.x = move_toward(player.velocity.x, direction.x * MAX_SPEED, ACCELERATION * delta)
   player.velocity.y = move_toward(player.velocity.y, direction.y * MAX_SPEED, ACCELERATION * delta)
 
   if Input.is_action_just_pressed("dodge"):
     return DodgingState.new(player)
+
+  if (Input.is_action_just_pressed("attack")):
+    return AttackingState.new(player)
 
   return self

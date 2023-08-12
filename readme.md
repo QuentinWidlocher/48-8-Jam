@@ -4,21 +4,21 @@
 
 ## Brainstorming
 
-Arme improvisée
-Une situation qui n'est pas un combat en deviens un
-Une sorcière qui se défend avec des objets dans son atelier (poele, balai, potion)
-Grand phare/tour où la sorcière fait des potions
-Jeu style Enter the Gungeon
-Procédural si on a le temps, plsuieurs étages il faut monter
-Les armes cassent vite style botw
-le dash c'est son balais
-Twin stick shooter, coté survie où il faut aller récup des armes dans le décors
-Limite d'arme dans les mains
-Spot d'armes qui te donne une arme (genre une cuisinne qui donne une poele ou une louche)
-Quand un spot donne une arme, il a un cooldown de 20s pour éviter qu'on campe devant
-Les monstres apparaissent d'un genre de nexus, et entre chaque vagues d'ennemis on a un peu de temps pour chercher d'autres items
-Il y a plusieurs spot d'apparition et il faut les détruire pour arrêter les vagues.
-Si on a plusieurs item, ils se combinent pour donner une arme plus puissante
+Arme improvisée  
+Une situation qui n'est pas un combat en deviens un  
+Une sorcière qui se défend avec des objets dans son atelier (poele, balai, potion)  
+Grand phare/tour où la sorcière fait des potions  
+Jeu style Enter the Gungeon  
+Procédural si on a le temps, plsuieurs étages il faut monter  
+Les armes cassent vite style botw  
+le dash c'est son balais  
+Twin stick shooter, coté survie où il faut aller récup des armes dans le décors  
+Limite d'arme dans les mains  
+Spot d'armes qui te donne une arme (genre une cuisinne qui donne une poele ou une louche)  
+Quand un spot donne une arme, il a un cooldown de 20s pour éviter qu'on campe devant  
+Les monstres apparaissent d'un genre de nexus, et entre chaque vagues d'ennemis on a un peu de temps pour chercher d'autres items  
+Il y a plusieurs spot d'apparition et il faut les détruire pour arrêter les vagues.  
+Si on a plusieurs item, ils se combinent pour donner une arme plus puissante  
 
 
 ## "Histoire"
