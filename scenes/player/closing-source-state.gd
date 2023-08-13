@@ -10,7 +10,7 @@ func _on_exit() -> void:
   pass
 
 func _update(delta: float) -> State:
-  if Input.is_action_pressed("attack") and player.near_source != null:
+  if Input.is_action_pressed("dodge") and player.near_source != null:
     player.near_source.close(delta)
   else:
     return IdleState.new(player)

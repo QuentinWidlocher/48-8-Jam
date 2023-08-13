@@ -35,6 +35,7 @@ func _physics_process(delta):
 
   near_dispenser = null
   near_source = null
+  near_door = null
   for area in dispenser_area_2d.get_overlapping_areas():
     var object = area.get_parent()
 

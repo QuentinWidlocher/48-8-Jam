@@ -8,6 +8,7 @@ const LEVELS = [
 ]
 const GAME_OVER_SCREEN = preload('res://scenes/ui/game_over.tscn')
 const WIN_SCREEN = preload('res://scenes/ui/win_screen.tscn')
+const MUSIC = preload('res://sons/the monster.mp3')
 
 var current_level := 0
 
@@ -18,7 +19,11 @@ var all_sources_closed: bool:
     return current_sources_closed >= sources_in_level
 
 func _ready():
-  pass
+  var player = AudioStreamPlayer.new()
+  player.stream = MUSIC
+  player.autoplay = true
+  player.volume_db = -15
+  add_child(player)
 
 func load_level(level: int):
   sources_in_level = 0
