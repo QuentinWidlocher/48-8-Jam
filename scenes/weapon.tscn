@@ -74,7 +74,7 @@ _data = {
 "melee_attack": SubResource("Animation_l3n0e")
 }
 
-[node name="weapon" type="Node2D"]
+[node name="weapon" type="Area2D"]
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_cn5rp")
@@ -85,3 +85,5 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

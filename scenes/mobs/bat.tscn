@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://cdgybbj1wixbl"]
+
+[ext_resource type="PackedScene" uid="uid://bnvib2x01uw01" path="res://scenes/mob.tscn" id="1_dld1b"]
+[ext_resource type="Script" path="res://scenes/mobs/bat.gd" id="2_g831e"]
+[ext_resource type="Texture2D" uid="uid://b5fy54oxteh67" path="res://assets/mobs/Bat_1.png" id="2_qui57"]
+[ext_resource type="Texture2D" uid="uid://de12mpxh3cxfn" path="res://assets/mobs/Bat_2.png" id="3_3h62d"]
+[ext_resource type="Texture2D" uid="uid://bqe3fe6o1hpil" path="res://assets/mobs/Bat_3.png" id="4_i8a0e"]
+[ext_resource type="Theme" uid="uid://b8m0j8v81etvk" path="res://assets/ui/theme.tres" id="6_mluru"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5wfn2"]
+radius = 26.0768
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p8vm4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qui57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3h62d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i8a0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3h62d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Bat" instance=ExtResource("1_dld1b")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_g831e")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_5wfn2")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(7, 4)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_p8vm4")
+frame_progress = 0.432676
+
+[node name="ProgressBar" parent="." index="2"]
+theme = ExtResource("6_mluru")
+value = 100.0
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_5wfn2")

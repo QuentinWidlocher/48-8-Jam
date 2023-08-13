@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://df2qm14vkwsne"]
+[gd_scene load_steps=3 format=3 uid="uid://df2qm14vkwsne"]
 
-[ext_resource type="PackedScene" uid="uid://b682xqu2l4nlo" path="res://assets/level_design.ldtk" id="1_x2o5p"]
+[ext_resource type="PackedScene" uid="uid://3pwn4o4io4ij" path="res://assets/level_design.ldtk" id="1_x2o5p"]
+[ext_resource type="PackedScene" uid="uid://cdgybbj1wixbl" path="res://scenes/mobs/bat.tscn" id="2_71cpj"]
 
 [node name="Sandbox" type="Node2D"]
 
 [node name="level_design" parent="." instance=ExtResource("1_x2o5p")]
 position = Vector2(11, -264)
+
+[node name="Bat" parent="." instance=ExtResource("2_71cpj")]
+position = Vector2(1882, 1552)
+collision_mask = 1
+motion_mode = 0
