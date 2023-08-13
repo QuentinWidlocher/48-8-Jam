@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://o235utvrcqyx"]
+[gd_scene load_steps=3 format=3 uid="uid://dmnkea6lnyj8l"]
 
-[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_e8g8u"]
-[ext_resource type="FontFile" uid="uid://5oc3hef4dgse" path="res://assets/letter-magic.ttf" id="2_534dl"]
+[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_vssh8"]
+[ext_resource type="FontFile" uid="uid://5oc3hef4dgse" path="res://assets/letter-magic.ttf" id="2_l3nb1"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-script = ExtResource("1_e8g8u")
+script = ExtResource("1_vssh8")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
@@ -31,9 +31,15 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer2/CenterContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_534dl")
-theme_override_font_sizes/font_size = 80
-text = "Witch Panic"
+theme_override_fonts/font = ExtResource("2_l3nb1")
+theme_override_font_sizes/font_size = 70
+text = "Game Over."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer2/CenterContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "All the monsters now live in your house forever !"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer2/CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -41,12 +47,11 @@ theme_override_constants/separation = 50
 
 [node name="PlayButton" type="Button" parent="CanvasLayer2/CenterContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "Play"
+text = "Start over"
 
 [node name="ExitButton" type="Button" parent="CanvasLayer2/CenterContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "Exit
-"
+text = "Exit"
 
 [connection signal="pressed" from="CanvasLayer2/CenterContainer/VBoxContainer/VBoxContainer2/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer2/CenterContainer/VBoxContainer/VBoxContainer2/ExitButton" to="." method="_on_exit_button_pressed"]

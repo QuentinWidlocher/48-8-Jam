@@ -1,6 +1,7 @@
 class_name Mob
 extends CharacterBody2D
 
+@export var damage = 10.0
 @export var max_health = 20.0
 @export var invincibility_timeout = 0.5
 
@@ -21,7 +22,8 @@ func _process(delta):
   if current_invincibility_timeout > 0:
     current_invincibility_timeout -= delta
 
-func _on_area_2d_area_entered(area):
+func _on_hit_area_2d_area_entered(area):
+  print( "_on_hit_area_2d_area_entered" )
   if not can_be_hurt:
     return
 
@@ -32,3 +34,9 @@ func _on_area_2d_area_entered(area):
 
   if current_health <= 0:
     queue_free()
+
+func _on_damage_area_2d_body_entered(body):
+  print("_on_damage_area_2d_body_entered")
+  if body is Player:
+    (body as Player).take_damage(damage)
+

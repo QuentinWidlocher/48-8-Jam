@@ -2,6 +2,8 @@ class_name Player
 extends CharacterBody2D
 
 @onready var inventory_manager: InventoryManager = get_node("/root/MyInventoryManager")
+@onready var level_manager: LevelManager = get_node("/root/LevelManager")
+@onready var player_manager: PlayerManager = get_node("/root/PlayerManager")
 
 @onready var debug_label: Label = $Label
 @onready var weapon_location: Node2D = $WeaponAnchor/WeaponLocation
@@ -10,6 +12,8 @@ extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D 
 
+var max_health = 100
+var health = max_health
 var state: State
 var looking_angle := 0.0
 var near_dispenser: Dispenser
@@ -17,6 +21,8 @@ var near_dispenser: Dispenser
 func _ready():
   state = IdleState.new(self)
   state.on_enter()
+
+  player_manager.health_updated.emit(health, max_health)
 
   inventory_manager.current_weapon_updated.connect(current_weapon_updated)
   inventory_manager.inventory_updated.connect(weapons_updated)
@@ -85,3 +91,10 @@ func current_weapon_updated(weapon: Weapon):
     else:
       weapon_in_hand.set_process(false)
       weapon_in_hand.sprite.visible = false
+
+func take_damage(damage: float):
+  health -= damage
+  player_manager.health_updated.emit(health)
+
+  if health <= 0:
+    level_manager.player_died()

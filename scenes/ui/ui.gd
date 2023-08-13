@@ -1,8 +1,10 @@
 extends CanvasLayer
 
 @onready var item_bar: HBoxContainer = %ItemBar
+@onready var health_bar: ProgressBar = %HealthBar
 
 @onready var inventory_manager: InventoryManager = get_node("/root/MyInventoryManager")
+@onready var player_manager: PlayerManager = get_node("/root/PlayerManager")
 
 const highlight_texture = preload("res://assets/ui/kenney_ui-pack-rpg-expansion/PNG/buttonSquare_beige_pressed.png")
 
@@ -13,6 +15,7 @@ func _ready():
 
   inventory_manager.inventory_updated.connect(_redraw_item_bar)
   inventory_manager.current_weapon_updated.connect(current_weapon_updated)
+  player_manager.health_updated.connect(update_health_bar)
 
 func _process(_delta):
   var boxes = item_bar.get_children()
@@ -69,3 +72,9 @@ func current_weapon_updated(_weapon: Weapon):
   var box = item_bar.get_child(inventory_manager.current_weapon_index)
 
   box.get_child(0).set_visible(true)
+
+func update_health_bar(value, max_value = null):
+  health_bar.value = value
+
+  if max_value != null:
+    health_bar.max_value = max_value

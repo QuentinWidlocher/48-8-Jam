@@ -1,6 +1,7 @@
 extends Node
 
 const LDTK_PROJECT = preload('res://assets/level_design.ldtk')
+const GAME_OVER_SCREEN = preload('res://scenes/ui/game_over.tscn')
 
 var current_level := 0
 
@@ -39,3 +40,6 @@ func spawn_entity(pack: PackedScene):
   var instance = pack.instance()
   get_tree().current_scene.get_node("Entities").add_child(instance)
   return instance
+
+func player_died():
+  get_tree().change_scene_to_packed(GAME_OVER_SCREEN)

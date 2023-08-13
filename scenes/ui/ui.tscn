@@ -7,22 +7,34 @@
 script = ExtResource("1_83n5j")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(500, 2.08165e-12)
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 550.0
+offset_bottom = 89.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "HP : 100"
+theme_type_variation = &"HeaderLarge"
+text = "Health"
+
+[node name="HealthBar" type="ProgressBar" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+value = 100.0
+show_percentage = false
 
 [node name="ItemBarControl" type="Control" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 128)
 layout_mode = 3
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -169.0
-offset_bottom = -47.0
+offset_top = -157.0
+offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 0
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdgybbj1wixbl"]
+[gd_scene load_steps=11 format=3 uid="uid://cdgybbj1wixbl"]
 
 [ext_resource type="PackedScene" uid="uid://bnvib2x01uw01" path="res://scenes/mob.tscn" id="1_dld1b"]
 [ext_resource type="Script" path="res://scenes/mobs/bat.gd" id="2_g831e"]
@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bqe3fe6o1hpil" path="res://assets/mobs/Bat_3.png" id="4_i8a0e"]
 [ext_resource type="Theme" uid="uid://b8m0j8v81etvk" path="res://assets/ui/theme.tres" id="6_mluru"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5wfn2"]
-radius = 26.0768
+[sub_resource type="CircleShape2D" id="CircleShape2D_tcbrg"]
+radius = 29.0172
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p8vm4"]
 animations = [{
@@ -30,13 +30,19 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_arfq4"]
+radius = 37.0135
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fefc2"]
+radius = 22.0
+
 [node name="Bat" instance=ExtResource("1_dld1b")]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("2_g831e")
 
 [node name="CollisionShape2D" parent="." index="0"]
-shape = SubResource("CircleShape2D_5wfn2")
+shape = SubResource("CircleShape2D_tcbrg")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(7, 4)
@@ -48,5 +54,8 @@ frame_progress = 0.432676
 theme = ExtResource("6_mluru")
 value = 100.0
 
-[node name="CollisionShape2D" parent="Area2D" index="0"]
-shape = SubResource("CircleShape2D_5wfn2")
+[node name="CollisionShape2D" parent="HitArea2D" index="0"]
+shape = SubResource("CircleShape2D_arfq4")
+
+[node name="CollisionShape2D" parent="DamageArea2D" index="0"]
+shape = SubResource("CircleShape2D_fefc2")
