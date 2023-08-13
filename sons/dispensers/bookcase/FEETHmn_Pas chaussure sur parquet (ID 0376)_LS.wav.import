@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cvjf1lexn8agi"
+path="res://.godot/imported/FEETHmn_Pas chaussure sur parquet (ID 0376)_LS.wav-6bf21535cef6b076f3af41e954be7629.sample"
+
+[deps]
+
+source_file="res://sons/dispensers/bookcase/FEETHmn_Pas chaussure sur parquet (ID 0376)_LS.wav"
+dest_files=["res://.godot/imported/FEETHmn_Pas chaussure sur parquet (ID 0376)_LS.wav-6bf21535cef6b076f3af41e954be7629.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

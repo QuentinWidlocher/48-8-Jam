@@ -4,7 +4,7 @@ extends CanvasLayer
 
 @onready var inventory_manager: InventoryManager = get_node("/root/MyInventoryManager")
 
-const highlight_texture = preload("res://icon.svg")
+const highlight_texture = preload("res://assets/ui/kenney_ui-pack-rpg-expansion/PNG/buttonSquare_beige_pressed.png")
 
 func _ready():
   for i in range(inventory_manager.MAX_WEAPON_COUNT):
@@ -31,30 +31,25 @@ func draw_item(weapon: Weapon) -> Control:
   var item = Control.new()
   item.set_custom_minimum_size(Vector2(128, 128))
 
-  var bg = ColorRect.new()
-  bg.color = Color(0, 0, 0, 0.5)
-  bg.set_custom_minimum_size(Vector2(128, 128))
-
   var texture = TextureRect.new()
+  texture.set_expand_mode(TextureRect.EXPAND_FIT_HEIGHT)
+  texture.set_anchors_preset(Control.PRESET_FULL_RECT)
   texture.set_texture(weapon.get_node("Sprite").texture if weapon != null else null)
 
-  var highlight = TextureRect.new()
-  highlight.name = "Highlight"
-  highlight.set_texture(highlight_texture)
-  highlight.flip_v = true
+  var highlight = Panel.new()
+  highlight.set_anchors_preset(Control.PRESET_FULL_RECT)
   highlight.set_visible(false)
 
-  item.add_child(bg)
-  item.add_child(texture)
   item.add_child(highlight)
+  item.add_child(texture)
 
   return item
 
 func current_weapon_updated(_weapon: Weapon):
 
   for box in item_bar.get_children():
-    box.get_child(2).set_visible(false)
+    box.get_child(0).set_visible(false)
 
   var box = item_bar.get_child(inventory_manager.current_weapon_index)
 
-  box.get_child(2).set_visible(true)
+  box.get_child(0).set_visible(true)

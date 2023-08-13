@@ -36,6 +36,7 @@ static func post_import(entity_layer: Node2D, layer_data: Dictionary) -> Node2D:
       "Dispenser":
         var disp: Dispenser = dispenser.instantiate()  
         disp.type = Dispenser.parse_enum(entity_data.fields["DispenserType"])
+        disp.name = entity_data.fields["DispenserType"] + disp.name
 
         print(disp)
         node = disp
@@ -51,6 +52,6 @@ static func post_import(entity_layer: Node2D, layer_data: Dictionary) -> Node2D:
     node.set_meta("entity_data", entity_data)
     entity_layer.add_child(node)
 
-    entity_layer.add_child(preload("res://scenes/ui/ui.tscn").instantiate())
+  entity_layer.add_child(preload("res://scenes/ui/ui.tscn").instantiate())
 
   return entity_layer

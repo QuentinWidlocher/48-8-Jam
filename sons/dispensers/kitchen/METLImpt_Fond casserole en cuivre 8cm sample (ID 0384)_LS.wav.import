@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://l5eoh2x356cy"
+path="res://.godot/imported/METLImpt_Fond casserole en cuivre 8cm sample (ID 0384)_LS.wav-1652db7497e5a4b9b61c519eae0dec72.sample"
+
+[deps]
+
+source_file="res://sons/dispensers/kitchen/METLImpt_Fond casserole en cuivre 8cm sample (ID 0384)_LS.wav"
+dest_files=["res://.godot/imported/METLImpt_Fond casserole en cuivre 8cm sample (ID 0384)_LS.wav-1652db7497e5a4b9b61c519eae0dec72.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

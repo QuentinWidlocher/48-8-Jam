@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cbyhda7jplksf"
+path="res://.godot/imported/METLImpt_Casserole 1 (ID 2956)_LS.wav-3336a976da804186cdf48dd25a57ab30.sample"
+
+[deps]
+
+source_file="res://sons/dispensers/kitchen/METLImpt_Casserole 1 (ID 2956)_LS.wav"
+dest_files=["res://.godot/imported/METLImpt_Casserole 1 (ID 2956)_LS.wav-3336a976da804186cdf48dd25a57ab30.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

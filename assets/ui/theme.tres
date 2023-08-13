@@ -1,0 +1,93 @@
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://b8m0j8v81etvk"]
+
+[ext_resource type="Texture2D" uid="uid://d0sucnfo618nj" path="res://assets/ui/kenney_ui-pack-rpg-expansion/PNG/buttonLong_beige.png" id="1_27ony"]
+[ext_resource type="Texture2D" uid="uid://22rs4m6w2jym" path="res://assets/ui/kenney_ui-pack-rpg-expansion/PNG/buttonLong_beige_pressed.png" id="2_dsps6"]
+[ext_resource type="Texture2D" uid="uid://dv7kawsfwh0l8" path="res://assets/ui/kenney_ui-pack-rpg-expansion/PNG/panel_brown.png" id="3_kyjbl"]
+[ext_resource type="Texture2D" uid="uid://deusrd58etuh5" path="res://assets/ui/kenney_ui-pack-rpg-expansion/PNG/barBack_horizontal.png" id="4_8ojgc"]
+[ext_resource type="Texture2D" uid="uid://b0m52ty1wkqbx" path="res://assets/ui/kenney_ui-pack-rpg-expansion/PNG/barRed_horizontal.png" id="5_k7b3h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fo1aj"]
+texture = ExtResource("1_27ony")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r1qjd"]
+texture = ExtResource("1_27ony")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_djop5"]
+texture = ExtResource("1_27ony")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s28vm"]
+texture = ExtResource("1_27ony")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ck1tb"]
+texture = ExtResource("2_dsps6")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0jofm"]
+texture = ExtResource("3_kyjbl")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2gqtq"]
+texture = ExtResource("4_8ojgc")
+texture_margin_left = 9.0
+texture_margin_top = 8.0
+texture_margin_right = 9.0
+texture_margin_bottom = 8.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_820qx"]
+texture = ExtResource("5_k7b3h")
+texture_margin_left = 9.0
+texture_margin_top = 5.0
+texture_margin_right = 9.0
+texture_margin_bottom = 7.0
+axis_stretch_horizontal = 1
+
+[resource]
+Button/colors/font_color = Color(0.4, 0.309804, 0.113725, 1)
+Button/colors/font_focus_color = Color(0.4, 0.309804, 0.113725, 1)
+Button/colors/font_hover_color = Color(0.4, 0.309804, 0.113725, 1)
+Button/colors/font_hover_pressed_color = Color(0.188235, 0.133333, 0.0117647, 1)
+Button/colors/font_pressed_color = Color(0.188235, 0.133333, 0.0117647, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_fo1aj")
+Button/styles/focus = SubResource("StyleBoxTexture_r1qjd")
+Button/styles/hover = SubResource("StyleBoxTexture_djop5")
+Button/styles/normal = SubResource("StyleBoxTexture_s28vm")
+Button/styles/pressed = SubResource("StyleBoxTexture_ck1tb")
+Panel/styles/panel = SubResource("StyleBoxTexture_0jofm")
+ProgressBar/styles/background = SubResource("StyleBoxTexture_2gqtq")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_820qx")

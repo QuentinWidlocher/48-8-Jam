@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cct0vsoc1qf8o"
+path="res://.godot/imported/METLCrsh_Chute 2 barres d acier en tole 2 (ID 1777)_LS.wav-42b992a38bfe3f6a6465f3db69665571.sample"
+
+[deps]
+
+source_file="res://sons/dispensers/kitchen/METLCrsh_Chute 2 barres d acier en tole 2 (ID 1777)_LS.wav"
+dest_files=["res://.godot/imported/METLCrsh_Chute 2 barres d acier en tole 2 (ID 1777)_LS.wav-42b992a38bfe3f6a6465f3db69665571.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

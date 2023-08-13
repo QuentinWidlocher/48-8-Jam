@@ -38,7 +38,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"melee_attack",
-"speed": 15.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -66,13 +66,16 @@ script = ExtResource("1_tucv0")
 light_mask = 0
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_rawg6")
-animation = &"idle"
+animation = &"melee_attack"
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 59)
 shape = SubResource("CapsuleShape2D_uw6wb")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 80.0
 offset_top = -66.0
 offset_right = 327.0
