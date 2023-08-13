@@ -30,16 +30,16 @@ func _update(delta: float) -> State:
   player.velocity.y = move_toward(player.velocity.y, direction.y * MAX_SPEED, ACCELERATION * delta)
 
   if Input.is_action_just_pressed("dodge"):
-    return DodgingState.new(player)
-
-  if (Input.is_action_just_pressed("attack")):
     if player.near_dispenser != null and player.near_dispenser.is_available:
       player.near_dispenser.refill()
     elif player.near_source != null:
       return ClosingSourceState.new(player)
     elif player.near_door != null:
       player.level_manager.next_level()
-    elif player.get_current_weapon() != null:
-      return AttackingState.new(player)
+    else:
+      return DodgingState.new(player)
+
+  if Input.is_action_just_pressed("attack") and player.get_current_weapon() != null:
+    return AttackingState.new(player)
 
   return self

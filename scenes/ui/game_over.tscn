@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bfyma7d3yy1y0" path="res://assets/decor/TitleScreen.png" id="2_dyxfl"]
 [ext_resource type="FontFile" uid="uid://5oc3hef4dgse" path="res://assets/letter-magic.ttf" id="2_l3nb1"]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

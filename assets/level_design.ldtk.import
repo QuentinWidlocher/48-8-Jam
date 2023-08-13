@@ -7,8 +7,10 @@ path="res://.godot/imported/level_design.ldtk-01a1851fcd9f8823e8eee603ca148be6.s
 
 [deps]
 
+files=["res://assets/level_design/tilesets/level_design-tileset-125x125.res", "res://assets/level_design/tilesets/level_design-tileset-16x16.res", "res://assets/level_design/tilesets/level_design-tileset-500x500.res", "res://assets/level_design/tilesets/level_design-tileset-1000x1000.res", "res://assets/level_design/tilesets/level_design-tileset-250x250.res"]
+
 source_file="res://assets/level_design.ldtk"
-dest_files=["res://.godot/imported/level_design.ldtk-01a1851fcd9f8823e8eee603ca148be6.scn"]
+dest_files=["res://.godot/imported/level_design.ldtk-01a1851fcd9f8823e8eee603ca148be6.scn", "res://assets/level_design/tilesets/level_design-tileset-125x125.res", "res://assets/level_design/tilesets/level_design-tileset-16x16.res", "res://assets/level_design/tilesets/level_design-tileset-500x500.res", "res://assets/level_design/tilesets/level_design-tileset-1000x1000.res", "res://assets/level_design/tilesets/level_design-tileset-250x250.res"]
 
 [params]
 

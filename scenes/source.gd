@@ -3,6 +3,7 @@ extends Node2D
 
 const MOBS := [
   preload("res://scenes/mobs/bat.tscn"),
+  preload("res://scenes/mobs/slime.tscn"),
 ]
 
 @onready var level_manager: LevelManager = get_node("/root/LevelManager")

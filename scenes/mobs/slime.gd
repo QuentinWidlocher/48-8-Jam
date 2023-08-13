@@ -1,7 +1,11 @@
 class_name Slime
 extends Mob
 
+<<<<<<< HEAD
 const DIRECTION_CHANGE_TIME := 5.0
+=======
+const DIRECTION_CHANGE_TIME := 3.0
+>>>>>>> develop
 const SPEED := 50
 
 var current_timeout := 0.0

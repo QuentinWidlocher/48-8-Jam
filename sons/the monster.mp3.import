@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< HEAD
 uid="uid://dtsrq260po1iu"
+=======
+uid="uid://dq82kygmuesor"
+>>>>>>> develop
 path="res://.godot/imported/the monster.mp3-a3fb388ce8027234334f34bae0124f5f.mp3str"
 
 [deps]
