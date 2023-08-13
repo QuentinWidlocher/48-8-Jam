@@ -54,13 +54,14 @@ func draw_item(weapon: Weapon) -> Control:
   highlight.set_anchors_preset(Control.PRESET_FULL_RECT)
   highlight.set_visible(false)
 
-  var health_bar = ProgressBar.new()
-  health_bar.set_anchors_preset(Control.PRESET_BOTTOM_WIDE)
-  health_bar.show_percentage = false
+  var hp_bar = ProgressBar.new()
+  hp_bar.modulate = Color(0, 0.82, 0.878)  
+  hp_bar.set_anchors_preset(Control.PRESET_BOTTOM_WIDE)
+  hp_bar.show_percentage = false
 
   item.add_child(highlight)
   item.add_child(texture)
-  item.add_child(health_bar)
+  item.add_child(hp_bar)
 
   return item
 

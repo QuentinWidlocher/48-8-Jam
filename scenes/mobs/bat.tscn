@@ -51,6 +51,7 @@ sprite_frames = SubResource("SpriteFrames_p8vm4")
 frame_progress = 0.432676
 
 [node name="ProgressBar" parent="." index="2"]
+modulate = Color(0.992157, 0.709804, 0.878431, 1)
 theme = ExtResource("6_mluru")
 value = 100.0
 

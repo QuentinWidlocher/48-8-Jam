@@ -21,6 +21,7 @@ text = "Health"
 
 [node name="HealthBar" type="ProgressBar" parent="VBoxContainer"]
 unique_name_in_owner = true
+modulate = Color(0, 0.819608, 0.878431, 1)
 custom_minimum_size = Vector2(2.08165e-12, 50)
 layout_mode = 2
 value = 100.0
