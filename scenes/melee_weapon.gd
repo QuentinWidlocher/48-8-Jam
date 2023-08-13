@@ -13,10 +13,13 @@ func _ready():
   get_node("CollisionShape2D").disabled = true
 
 func _on_enter():
-  animation_player.speed_scale = 1.0 / duration
-  animation_player.play("melee_attack")
-  audio_player.stream = SOUNDS[randi() % SOUNDS.size()]
-  audio_player.play()
+  if animation_player != null:
+    animation_player.speed_scale = 1.0 / duration
+    animation_player.play("melee_attack")
+
+  if audio_player != null:
+    audio_player.stream = SOUNDS[randi() % SOUNDS.size()]
+    audio_player.play()
 
   get_node("CollisionShape2D").disabled = false
 

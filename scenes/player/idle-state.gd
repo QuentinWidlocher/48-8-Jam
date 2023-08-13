@@ -26,6 +26,8 @@ func _update(delta: float) -> State:
       player.near_dispenser.refill()
     elif player.near_source != null:
       return ClosingSourceState.new(player)
+    elif player.near_door != null:
+      player.level_manager.next_level()
     elif player.get_current_weapon() != null:
       return AttackingState.new(player)
 

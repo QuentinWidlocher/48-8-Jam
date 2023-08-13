@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmnkea6lnyj8l"]
+[gd_scene load_steps=4 format=3 uid="uid://cout0wj41rsvd"]
 
-[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_vssh8"]
-[ext_resource type="Texture2D" uid="uid://bfyma7d3yy1y0" path="res://assets/decor/TitleScreen.png" id="2_dyxfl"]
-[ext_resource type="FontFile" uid="uid://5oc3hef4dgse" path="res://assets/letter-magic.ttf" id="2_l3nb1"]
+[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_q1ngv"]
+[ext_resource type="FontFile" uid="uid://5oc3hef4dgse" path="res://assets/letter-magic.ttf" id="2_6uy6j"]
+[ext_resource type="Texture2D" uid="uid://bfyma7d3yy1y0" path="res://assets/decor/TitleScreen.png" id="2_w1ogc"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-script = ExtResource("1_vssh8")
+script = ExtResource("1_q1ngv")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
@@ -26,7 +26,7 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2/CenterContainer"]
 modulate = Color(0.568627, 0.568627, 0.568627, 1)
 layout_mode = 2
-texture = ExtResource("2_dyxfl")
+texture = ExtResource("2_w1ogc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/CenterContainer"]
 layout_mode = 2
@@ -37,15 +37,17 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer2/CenterContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_l3nb1")
+theme_override_fonts/font = ExtResource("2_6uy6j")
 theme_override_font_sizes/font_size = 70
-text = "Game Over."
+text = "You did it !"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer2/CenterContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
-text = "All the monsters now live in your house forever !"
+text = "All the monsters now live in your house forever !
+(but they're your friends now)"
+horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer2/CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -53,7 +55,7 @@ theme_override_constants/separation = 50
 
 [node name="PlayButton" type="Button" parent="CanvasLayer2/CenterContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "Start over"
+text = "Start again"
 
 [node name="ExitButton" type="Button" parent="CanvasLayer2/CenterContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2

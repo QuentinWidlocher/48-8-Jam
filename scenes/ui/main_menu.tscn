@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://o235utvrcqyx"]
+[gd_scene load_steps=4 format=3 uid="uid://o235utvrcqyx"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_e8g8u"]
+[ext_resource type="Texture2D" uid="uid://bfyma7d3yy1y0" path="res://assets/decor/TitleScreen.png" id="2_6rfen"]
 [ext_resource type="FontFile" uid="uid://5oc3hef4dgse" path="res://assets/letter-magic.ttf" id="2_534dl"]
 
 [node name="Control" type="Control"]
@@ -22,9 +23,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/CenterContainer"]
+modulate = Color(0.568627, 0.568627, 0.568627, 1)
+layout_mode = 2
+texture = ExtResource("2_6rfen")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/CenterContainer"]
 layout_mode = 2
-theme_override_constants/separation = 150
+theme_override_constants/separation = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -32,8 +38,19 @@ layout_mode = 2
 [node name="Label" type="Label" parent="CanvasLayer2/CenterContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_534dl")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 120
 text = "Witch Panic"
+
+[node name="Label2" type="Label" parent="CanvasLayer2/CenterContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "You were brewing a potion a the top of your tower.
+
+You left your house without turning  it off
+and monsters started appearing from the leaking potion !
+
+Go back to the top and stop this mess !"
+horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer2/CenterContainer/VBoxContainer"]
 layout_mode = 2

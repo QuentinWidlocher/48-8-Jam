@@ -25,8 +25,11 @@ static func post_import(entity_layer: Node2D, layer_data: Dictionary) -> Node2D:
         camera.position_smoothing_enabled = true
         camera.limit_left = 0
         camera.limit_top = 0 
-        camera.limit_right = level_width * tile_width
-        camera.limit_bottom = level_height * tile_width
+        #camera.limit_right = level_width * tile_width
+        #camera.limit_bottom = level_height * tile_width
+        camera.position = node.position
+
+        camera.make_current()
 
         node.add_child(camera)
 

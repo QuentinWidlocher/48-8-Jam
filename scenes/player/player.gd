@@ -18,6 +18,7 @@ var state: State
 var looking_angle := 0.0
 var near_dispenser: Dispenser
 var near_source: Source
+var near_door: Door
 
 func _ready():
   state = IdleState.new(self)
@@ -42,6 +43,9 @@ func _physics_process(delta):
   
     if object is Source:
       near_source = object
+
+    if object is Door:
+      near_door = object
   
   weapon_anchor.rotation = Vector2.RIGHT.rotated(looking_angle).angle()
 
