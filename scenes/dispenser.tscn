@@ -46,9 +46,10 @@ _data = {
 
 [node name="Dispenser" type="Node2D"]
 script = ExtResource("1_uyxld")
+type = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -33)
+position = Vector2(0, -24)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_kg65t")
 
