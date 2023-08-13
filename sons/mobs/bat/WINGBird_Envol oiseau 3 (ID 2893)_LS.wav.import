@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qom3a33rw1lc"
+path="res://.godot/imported/WINGBird_Envol oiseau 3 (ID 2893)_LS.wav-911da780cefe863503099515497bb630.sample"
+
+[deps]
+
+source_file="res://sons/mobs/bat/WINGBird_Envol oiseau 3 (ID 2893)_LS.wav"
+dest_files=["res://.godot/imported/WINGBird_Envol oiseau 3 (ID 2893)_LS.wav-911da780cefe863503099515497bb630.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

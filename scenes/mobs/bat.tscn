@@ -8,7 +8,7 @@
 [ext_resource type="Theme" uid="uid://b8m0j8v81etvk" path="res://assets/ui/theme.tres" id="6_mluru"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tcbrg"]
-radius = 29.0172
+radius = 21.0238
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p8vm4"]
 animations = [{
@@ -34,7 +34,7 @@ animations = [{
 radius = 37.0135
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fefc2"]
-radius = 22.0
+radius = 25.0
 
 [node name="Bat" instance=ExtResource("1_dld1b")]
 collision_layer = 4

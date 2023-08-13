@@ -1,7 +1,8 @@
 class_name AttackingState extends State
 
 var weapon: Weapon
-var DECELERATION = RunningState.ACCELERATION / 5.0
+var ACCELERATION = RunningState.ACCELERATION
+var MAX_SPEED = RunningState.MAX_SPEED
 
 func _on_enter() -> void:
   name = "AttackingState"
@@ -24,8 +25,21 @@ func _update(delta: float) -> State:
 
   var done = weapon.update(delta)
   
-  player.velocity.x = move_toward(player.velocity.x, 0.0, DECELERATION * delta)
-  player.velocity.y = move_toward(player.velocity.y, 0.0, DECELERATION * delta)
+  var x_input = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+  var y_input = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+
+  var direction = Vector2(x_input, y_input).normalized()
+
+  if direction.length() > 0:
+    player.looking_angle = direction.angle()
+
+  if direction.x < 0:
+    player.animated_sprite.flip_h = true
+  else:
+    player.animated_sprite.flip_h = false
+
+  player.velocity.x = move_toward(player.velocity.x, direction.x * MAX_SPEED, ACCELERATION * delta)
+  player.velocity.y = move_toward(player.velocity.y, direction.y * MAX_SPEED, ACCELERATION * delta)
 
   if done:
     return IdleState.new(player)

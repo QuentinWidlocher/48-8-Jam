@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wy4kuhlugkln"
+path="res://.godot/imported/SWSH_Epee qui fend l air (ID 0128)_LS.wav-3e1058e544c1ac67b7d3a3988934e4ff.sample"
+
+[deps]
+
+source_file="res://sons/mobs/attaque/SWSH_Epee qui fend l air (ID 0128)_LS.wav"
+dest_files=["res://.godot/imported/SWSH_Epee qui fend l air (ID 0128)_LS.wav-3e1058e544c1ac67b7d3a3988934e4ff.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

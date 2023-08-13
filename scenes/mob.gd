@@ -1,36 +1,41 @@
 class_name Mob
 extends CharacterBody2D
 
+const KNOCKBACK_SPEED = 700
+const DECELERATION = 1200.0
+
 @export var damage = 10.0
 @export var max_health = 20.0
-@export var invincibility_timeout = 0.5
 
 @onready var health_bar: ProgressBar = $ProgressBar
 
 var current_health = max_health
-var current_invincibility_timeout = 0.0
 
-var can_be_hurt: bool:
-  get:
-    return current_invincibility_timeout <= 0.0
+var can_be_hurt := true
 
 func _ready():
   get_node("AnimatedSprite2D").play("default")
   health_bar.max_value = max_health
 
 func _process(delta):
-  if current_invincibility_timeout > 0:
-    current_invincibility_timeout -= delta
+  if not can_be_hurt:
+    self.velocity.x = move_toward(self.velocity.x, 0.0, DECELERATION * delta)
+    self.velocity.y = move_toward(self.velocity.y, 0.0, DECELERATION * delta)
+
+    if self.velocity.length() <= 5:
+      can_be_hurt = true
+
 
 func _on_hit_area_2d_area_entered(area):
-  print( "_on_hit_area_2d_area_entered" )
   if not can_be_hurt:
     return
 
   if area is MeleeWeapon:
-    var weapon: MeleeWeapon = area
-    current_health -= weapon.damage
+    current_health = current_health - (area as MeleeWeapon).damage
     health_bar.value = current_health
+    var direction = self.position - area.position
+    self.velocity = direction.normalized() * KNOCKBACK_SPEED
+    can_be_hurt = false
 
   if current_health <= 0:
     queue_free()
