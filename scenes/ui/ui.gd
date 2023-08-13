@@ -14,8 +14,18 @@ func _ready():
   inventory_manager.inventory_updated.connect(_redraw_item_bar)
   inventory_manager.current_weapon_updated.connect(current_weapon_updated)
 
+func _process(_delta):
+  var boxes = item_bar.get_children()
+
+  for i in range(boxes.size()):
+    var box = boxes[i]
+    var weapon = inventory_manager.weapons[i]
+
+    if weapon != null:
+      box.get_child(2).max_value = weapon.durability
+      box.get_child(2).value = weapon.current_durability
+
 func _redraw_item_bar(weapons: Array):
-  print("Redrawing item bar with ", weapons)
   var boxes = item_bar.get_children()
 
   for i in range(boxes.size()):
@@ -26,6 +36,7 @@ func _redraw_item_bar(weapons: Array):
       box.get_child(1).texture = weapon.get_node("Sprite").texture
     else:
       box.get_child(1).texture = null
+      box.get_child(2).value = 0
 
 func draw_item(weapon: Weapon) -> Control:
   var item = Control.new()
@@ -40,8 +51,13 @@ func draw_item(weapon: Weapon) -> Control:
   highlight.set_anchors_preset(Control.PRESET_FULL_RECT)
   highlight.set_visible(false)
 
+  var health_bar = ProgressBar.new()
+  health_bar.set_anchors_preset(Control.PRESET_BOTTOM_WIDE)
+  health_bar.show_percentage = false
+
   item.add_child(highlight)
   item.add_child(texture)
+  item.add_child(health_bar)
 
   return item
 

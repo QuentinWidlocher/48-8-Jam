@@ -6,6 +6,11 @@ extends Weapon
 @export var duration: float
 
 var current_timer: float = 0.0
+var current_durability: float = durability
+
+func _ready():
+  print(durability)
+  current_durability = durability
 
 func _on_enter():
   animation_player.speed_scale = 1.0 / duration
@@ -13,12 +18,14 @@ func _on_enter():
   audio_player.stream = SOUNDS[randi() % SOUNDS.size()]
   audio_player.play()
 
+  print(current_durability, " / ", durability)
+
 func _on_exit() -> bool:
   animation_player.play("RESET")
   current_timer = 0.0
-  durability -= 1
+  current_durability -= 1
 
-  return durability <= 0
+  return current_durability <= 0
 
 func _update(delta:float) -> bool:
   current_timer += delta

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/melee_weapon.gd" id="2_w2p60"]
 [ext_resource type="Texture2D" uid="uid://bw5ba5iaodnjy" path="res://assets/weapons/WP_poele.png" id="3_aym5o"]
 
-[node name="Laddle" instance=ExtResource("1_dophw")]
+[node name="Pan" instance=ExtResource("1_dophw")]
 script = ExtResource("2_w2p60")
 damage = 5.0
 durability = 10.0
