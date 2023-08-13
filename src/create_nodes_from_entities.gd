@@ -37,6 +37,7 @@ static func post_import(entity_layer: Node2D, layer_data: Dictionary) -> Node2D:
         var disp: Dispenser = dispenser.instantiate()  
         disp.type = Dispenser.parse_enum(entity_data.fields["DispenserType"])
         disp.name = entity_data.fields["DispenserType"] + disp.name
+        disp.get_node("Sprite2D").set_z_index(1)
 
         print(disp)
         node = disp
