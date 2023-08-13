@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=15 format=3 uid="uid://2empponhcwes"]
-=======
 [gd_scene load_steps=15 format=3 uid="uid://cs75dtkf8qqb4"]
->>>>>>> develop
 
 [ext_resource type="PackedScene" uid="uid://bnvib2x01uw01" path="res://scenes/mob.tscn" id="1_ctk66"]
 [ext_resource type="Script" path="res://scenes/mobs/slime.gd" id="2_20wre"]
@@ -68,27 +64,6 @@ script = ExtResource("2_20wre")
 damage = 5.0
 
 [node name="CollisionShape2D" parent="." index="0"]
-<<<<<<< HEAD
-shape = SubResource("CircleShape2D_tcbrg")
-
-[node name="AnimatedSprite2D" parent="." index="1"]
-position = Vector2(-1, 1)
-scale = Vector2(0.25, 0.25)
-sprite_frames = SubResource("SpriteFrames_p8vm4")
-animation = &"attack"
-frame_progress = 0.157464
-
-[node name="ProgressBar" parent="." index="2"]
-modulate = Color(0.992157, 0.709804, 0.878431, 1)
-offset_top = -80.0
-offset_bottom = -64.0
-theme = ExtResource("6_4yx80")
-value = 100.0
-
-[node name="CollisionShape2D" parent="HitArea2D" index="0"]
-shape = SubResource("CircleShape2D_arfq4")
-
-=======
 position = Vector2(-8, -41)
 shape = SubResource("CircleShape2D_tcbrg")
 
@@ -117,6 +92,5 @@ shape = SubResource("CircleShape2D_arfq4")
 [node name="DamageArea2D" parent="." index="4"]
 position = Vector2(-8, -41)
 
->>>>>>> develop
 [node name="CollisionShape2D" parent="DamageArea2D" index="0"]
 shape = SubResource("CircleShape2D_fefc2")
