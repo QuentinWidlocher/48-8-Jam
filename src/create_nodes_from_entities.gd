@@ -45,6 +45,14 @@ static func post_import(entity_layer: Node2D, layer_data: Dictionary) -> Node2D:
 
         node = src
 
+      "FloatingText":
+        node = Node2D.new()
+        var label := Label.new()
+        label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+        label.add_theme_font_size_override("jsp", 80)
+        label.text = entity_data.fields["Value"]
+
+        node.add_child(label)
       _:
         node = Node2D.new()
 
