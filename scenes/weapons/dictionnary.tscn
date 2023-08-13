@@ -9,8 +9,8 @@ radius = 101.195
 
 [node name="Dictionnary" instance=ExtResource("1_7c2ec")]
 script = ExtResource("2_32wxm")
-damage = 7.0
-durability = 3.0
+damage = 10.0
+durability = 4.0
 duration = 1.0
 
 [node name="Sprite" parent="." index="0"]

@@ -38,5 +38,5 @@ func _on_hit_area_2d_area_entered(area):
 func _on_damage_area_2d_body_entered(body):
   print("_on_damage_area_2d_body_entered")
   if body is Player:
-    (body as Player).take_damage(damage)
+    (body as Player).take_damage(damage, self)
 

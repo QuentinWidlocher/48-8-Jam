@@ -24,6 +24,8 @@ func _update(delta: float) -> State:
   if (Input.is_action_just_pressed("attack")):
     if player.near_dispenser != null and player.near_dispenser.is_available:
       player.near_dispenser.refill()
+    elif player.near_source != null:
+      return ClosingSourceState.new(player)
     elif player.get_current_weapon() != null:
       return AttackingState.new(player)
 

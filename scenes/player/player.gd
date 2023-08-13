@@ -17,6 +17,7 @@ var health = max_health
 var state: State
 var looking_angle := 0.0
 var near_dispenser: Dispenser
+var near_source: Source
 
 func _ready():
   state = IdleState.new(self)
@@ -32,10 +33,15 @@ func _physics_process(delta):
     return
 
   near_dispenser = null
+  near_source = null
   for area in dispenser_area_2d.get_overlapping_areas():
-    var dispenser = area.get_parent()
-    if dispenser is Dispenser:
-      near_dispenser = dispenser
+    var object = area.get_parent()
+
+    if object is Dispenser:
+      near_dispenser = object
+  
+    if object is Source:
+      near_source = object
   
   weapon_anchor.rotation = Vector2.RIGHT.rotated(looking_angle).angle()
 
@@ -92,9 +98,16 @@ func current_weapon_updated(weapon: Weapon):
       weapon_in_hand.set_process(false)
       weapon_in_hand.sprite.visible = false
 
-func take_damage(damage: float):
+func take_damage(damage: float, source: Mob):
   health -= damage
   player_manager.health_updated.emit(health)
+
+  var previous_name = state.name
+  state.on_exit()
+  state = HurtState.new(self, source)
+  state.on_enter()
+  debug_label.text = state.name
+  print("-> " + state.name + " from " + previous_name)
 
   if health <= 0:
     level_manager.player_died()

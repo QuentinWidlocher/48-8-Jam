@@ -37,3 +37,12 @@ frame_progress = 0.0252985
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_6m4gb")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+modulate = Color(0.984314, 0.403922, 0.752941, 1)
+offset_left = -104.0
+offset_top = 150.0
+offset_right = 112.0
+offset_bottom = 168.0
+value = 50.0
+show_percentage = false

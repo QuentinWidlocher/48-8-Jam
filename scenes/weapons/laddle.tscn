@@ -9,7 +9,7 @@ radius = 84.1724
 
 [node name="Laddle" instance=ExtResource("1_w71b7")]
 script = ExtResource("1_hrti8")
-damage = 1.0
+damage = 3.0
 durability = 10.0
 duration = 0.2
 

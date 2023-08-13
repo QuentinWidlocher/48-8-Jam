@@ -6,15 +6,23 @@ const MOBS := [
 ]
 
 @export var spawn_timer := 0.0
+@export var health := 5.0
 @export var initial_mob_spawned := 5
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var health_bar: ProgressBar = $ProgressBar
 
 var current_timer: float
+var current_health: float
 
 func _ready():
   sprite.play("default")
   current_timer = spawn_timer
+  current_health = health
+
+  health_bar.max_value = health
+  health_bar.value = current_health
+
   call_deferred("spawn_initial_mobs")
 
 func spawn_initial_mobs():
@@ -44,3 +52,11 @@ func get_random_point_in_radius() -> Vector2:
 
 func polar2cartesian(distance: float, angle: float) -> Vector2:
   return Vector2(distance * cos(angle), distance * sin(angle))
+
+func close(delta: float):
+  health -= delta
+  health_bar.value = health
+
+  if health <= 0:
+    queue_free()
+
