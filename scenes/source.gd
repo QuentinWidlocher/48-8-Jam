@@ -5,6 +5,8 @@ const MOBS := [
   preload("res://scenes/mobs/bat.tscn"),
 ]
 
+@onready var level_manager: LevelManager = get_node("/root/LevelManager")
+
 @export var spawn_timer := 0.0
 @export var health := 5.0
 @export var initial_mob_spawned := 5
@@ -58,5 +60,6 @@ func close(delta: float):
   health_bar.value = health
 
   if health <= 0:
+    level_manager.source_closed()
     queue_free()
 

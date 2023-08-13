@@ -1,5 +1,7 @@
 static func post_import(level: Node2D, _ldtk_data: Dictionary) -> Node2D:
   var tilemap: TileMap = level.get_children().filter(func(child): return child is TileMap)[0]
+  var entities: Node2D = level.get_children().filter(func(child): return child.name == "Entities")[0]
+  var source_count = entities.get_children().filter(func(child): return child is Source).size()
 
   print(tilemap)
 
