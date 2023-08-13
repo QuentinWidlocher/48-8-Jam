@@ -10,6 +10,8 @@ var current_timer: float = 0.0
 func _on_enter():
   animation_player.speed_scale = 1.0 / duration
   animation_player.play("melee_attack")
+  audio_player.stream = SOUNDS[randi() % SOUNDS.size()]
+  audio_player.play()
 
 func _on_exit() -> bool:
   animation_player.play("RESET")

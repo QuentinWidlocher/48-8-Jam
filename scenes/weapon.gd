@@ -3,6 +3,13 @@ extends Node2D
 
 @onready var sprite: Sprite2D = $Sprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer 
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D 
+
+const SOUNDS := [
+  preload("res://sons/dispensers/woosh/SWSH_Whoosh 7 (ID 1800)_LS.wav"),
+  preload("res://sons/dispensers/woosh/SWSH_Whoosh 8 (ID 1801)_LS.wav"),
+  preload("res://sons/dispensers/woosh/SWSH_Whoosh 10 (ID 1798)_LS.wav"),
+]
 
 # DO NOT IMPLEMENT
 func on_enter() -> void:
