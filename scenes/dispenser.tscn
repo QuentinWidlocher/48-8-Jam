@@ -1,10 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://bip1t125ls5tt"]
+[gd_scene load_steps=8 format=3 uid="uid://bip1t125ls5tt"]
 
 [ext_resource type="Script" path="res://scenes/dispenser.gd" id="1_uyxld"]
 [ext_resource type="Texture2D" uid="uid://dijfkmutjid2i" path="res://assets/dispensers/Kitchen.png" id="2_kg65t"]
+[ext_resource type="Texture2D" uid="uid://cty2u7a8r27ba" path="res://assets/ui/kenney_ui-pack-rpg-expansion/PNG/arrowSilver_right.png" id="3_s5vnu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o528v"]
 size = Vector2(635, 230)
+
+[sub_resource type="Animation" id="Animation_mmlo2"]
+resource_name = "ready"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -186), Vector2(0, -160), Vector2(2.08165e-12, -186)]
+}
+
+[sub_resource type="Animation" id="Animation_hvtk5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -186)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pwaor"]
+_data = {
+"RESET": SubResource("Animation_hvtk5"),
+"ready": SubResource("Animation_mmlo2")
+}
 
 [node name="Dispenser" type="Node2D"]
 script = ExtResource("1_uyxld")
@@ -16,12 +54,28 @@ texture = ExtResource("2_kg65t")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 43)
+position = Vector2(1, 1)
 scale = Vector2(0.672089, 1)
 shape = SubResource("RectangleShape2D_o528v")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 3
+offset_top = -186.0
+offset_right = 40.0
+offset_bottom = -146.0
+rotation = 1.5708
+pivot_offset = Vector2(20, 2.08165e-12)
+texture = ExtResource("3_s5vnu")
+stretch_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_pwaor")
+}
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

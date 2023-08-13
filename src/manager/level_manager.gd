@@ -28,3 +28,14 @@ func load_level(level: int):
 
   get_tree().current_scene = level_to_load
     
+func get_current_tilemap() -> TileMap:
+  for child in get_tree().current_scene.get_children():
+    if child is TileMap:
+      return child
+
+  return null
+
+func spawn_entity(pack: PackedScene):
+  var instance = pack.instance()
+  get_tree().current_scene.get_node("Entities").add_child(instance)
+  return instance

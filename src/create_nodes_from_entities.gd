@@ -1,14 +1,11 @@
 static func post_import(entity_layer: Node2D, layer_data: Dictionary) -> Node2D:
   var player := preload("res://scenes/player/player.tscn")
   var dispenser := preload("res://scenes/dispenser.tscn")
+  var source := preload("res://scenes/source.tscn")
 
   var level_width := int(layer_data["__cWid"])
   var level_height := int(layer_data["__cHei"])
   var tile_width := int(layer_data["__gridSize"])
-
-  print("Level width:", level_width)
-  print("Level height:", level_height)
-  print("Tile width:", tile_width)
 
   var data: Array = entity_layer.get_meta("LDtk_entity_instances")
   var label_settings := LabelSettings.new()
@@ -39,8 +36,14 @@ static func post_import(entity_layer: Node2D, layer_data: Dictionary) -> Node2D:
         disp.name = entity_data.fields["DispenserType"] + disp.name
         disp.get_node("Sprite2D").set_z_index(1)
 
-        print(disp)
         node = disp
+
+      "Source":
+        var src: Source = source.instantiate()
+        src.spawn_timer = float(entity_data.fields["SpawnTimer"])
+        src.initial_mob_spawned = int(entity_data.fields["InitialMobsSpawned"])
+
+        node = src
 
       _:
         node = Node2D.new()

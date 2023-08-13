@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://scenes/melee_weapon.gd" id="2_32wxm"]
 [ext_resource type="Texture2D" uid="uid://2ctueu5n35d1" path="res://assets/weapons/Dico.png" id="3_6jp2p"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i03qt"]
-size = Vector2(91.2351, 37.388)
+[sub_resource type="CircleShape2D" id="CircleShape2D_5up62"]
+radius = 101.195
 
 [node name="Dictionnary" instance=ExtResource("1_7c2ec")]
 script = ExtResource("2_32wxm")
@@ -20,4 +20,4 @@ texture = ExtResource("3_6jp2p")
 [node name="CollisionShape2D" parent="." index="3"]
 position = Vector2(1.26684, -1.44052)
 rotation = -1.02974
-shape = SubResource("RectangleShape2D_i03qt")
+shape = SubResource("CircleShape2D_5up62")

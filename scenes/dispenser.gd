@@ -45,6 +45,8 @@ const AUDIO: Dictionary = {
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer 
+@onready var arrow: TextureRect = $TextureRect 
 
 const COOLDOWN := 10.0
 var current_cooldown := 0.0
@@ -57,13 +59,16 @@ var is_available: bool:
 
 func _ready():
   sprite.texture = SPRITE[type][randi() % SPRITE[type].size()]
+  animation_player.play("ready")
 
 func _process(delta):
   if update_color:
     if is_available:
-      sprite.modulate = Color(0, 1, 1)
+      sprite.modulate = Color(1, 1, 1)
+      arrow.visible = true
     else:
-      sprite.modulate = Color(1,1,1,)
+      sprite.modulate = Color(0.5,0.5,0.5)
+      arrow.visible = false
 
   if current_cooldown > 0.0:
     current_cooldown -= delta
@@ -96,5 +101,5 @@ func _on_area_2d_area_entered(area):
 
 func _on_area_2d_area_exited(area):
   if area.get_parent() is Player:
-    sprite.modulate = Color(1, 1, 1)
     update_color = false
+    arrow.visible = false

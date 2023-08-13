@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://qc68aygdv8of" path="res://assets/weapons/WP_louche.png" id="3_sevf5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs42w"]
-radius = 30.3645
+radius = 84.1724
 
 [node name="Laddle" instance=ExtResource("1_w71b7")]
 script = ExtResource("1_hrti8")
